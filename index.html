@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Research Defense Quiz Game</title>
+  <link rel="stylesheet" href="style.css" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&display=swap"
+    rel="stylesheet"
+  />
+</head>
+<body>
+  <!-- Global Points Counter (outside the quiz frame) -->
+  <div id="globalPoints">
+    <strong>Points:</strong> <span id="pointsCounter">50</span>
+  </div>
+
+  <!-- Loading Screen -->
+  <div id="loadingScreen">
+    <div class="loading-content">
+      <div class="spinner"></div>
+      <h1 id="loadingText">Loading... 0%</h1>
+    </div>
+  </div>
+
+  <!-- Introductory splash screen (hidden until assets are preloaded) -->
+  <div id="introScreen" class="hidden">
+    <div class="intro-content">
+      <h1>Research Defense Quiz</h1>
+      <p>
+        Test your knowledge in academic integrity, and plagiarism. Each
+        round, a random question is given to a random participant. ©Miguel Adrian
+      </p>
+      <p class="start-instruction">Press any key or click here to begin...</p>
+    </div>
+  </div>
+
+  <!-- Main game content (hidden until the intro is dismissed) -->
+  <div id="mainContent" class="hidden">
+    <main>
+      <section class="quiz-container">
+        <!-- Inside the quiz container, show the question and a top–right label for its point value -->
+        <div class="question-box">
+          <div id="questionPointValue" class="question-point-value"></div>
+          <h2 id="questionText">Press "Next Question" to start!</h2>
+        </div>
+        <div class="difficulty-box">
+          <p id="difficultyInfo">Difficulty: N/A</p>
+        </div>
+        <div class="participant-box">
+          <p id="participantInfo">Participant: N/A</p>
+        </div>
+        <div class="timer-box">
+          <p id="timer">
+            Time Remaining: <span id="timeRemaining">0</span>
+          </p>
+        </div>
+      </section>
+      <section class="controls">
+        <button id="nextBtn">Next Question (SPACE)</button>
+        <button id="skipBtn">Skip Question (ENTER)</button>
+        <p>Skipped: <span id="skipCounter">0</span></p>
+      </section>
+    </main>
+  </div>
+
+  <!-- Debug Panel -->
+  <div id="debug">
+    <h3>Debug Info</h3>
+    <p>Participant Chances:</p>
+    <ul id="debugList"></ul>
+    <hr>
+    <!-- New container for question counts -->
+    <div id="questionCountDebug"></div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="preloader.js"></script>
+  <script src="points.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
